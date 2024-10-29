@@ -2,7 +2,7 @@ ESP32 IoT Sensor Project
 This project uses an ESP32 and DHT11 sensor to collect temperature and humidity data, which is then transmitted to a Raspberry Pi server over MQTT for storage and visualization.
 
 Features
-Temperature and Humidity Monitoring: Gathers data from a DHT11 sensor.
+Temperature and Humidity Monitoring: Gathers real-time data from a DHT11 sensor.
 Data Transmission via MQTT: Sends JSON-formatted sensor data to an MQTT broker.
 ESP-IDF with PlatformIO: Developed and flashed using ESP-IDF in PlatformIO.
 Real-Time Data Visualization: Data is processed and visualized on the server.
@@ -14,7 +14,7 @@ Kopiera kod
 git clone https://github.com/your-username/your-repo.git
 Configure WiFi and MQTT Credentials:
 
-Replace placeholders in the code with your actual WiFi and MQTT details:
+Open the code and replace placeholders with your actual WiFi and MQTT details:
 cpp
 Kopiera kod
 #define WIFI_SSID "your_wifi_ssid"
