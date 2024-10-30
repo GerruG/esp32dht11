@@ -159,8 +159,7 @@ void reconnect() {
     }
   }
 }
-```
-```cpp
+
 void setup() {
   Serial.begin(115200);
   
