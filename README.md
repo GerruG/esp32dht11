@@ -24,13 +24,14 @@ This project utilizes an **ESP32** and a **DHT11** sensor to monitor temperature
 // DHT settings
 #define DHT_PIN GPIO_NUM_0
 #define DHT_TYPE DHTesp::DHT11
+```
 WiFi.h & WiFiClient.h: Manage WiFi connectivity.
 PubSubClient.h: Handles MQTT communication.
 DHTesp.h: Interfaces with the DHT11 sensor.
 Credentials and Settings: Replace placeholder values with your actual WiFi and MQTT broker details.
 MQTT Reconnection Function
 cpp
-Kopiera kod
+```
 void reconnect() {
   while (!client.connected()) {
     Serial.print("Attempting MQTT connection...");
@@ -45,13 +46,14 @@ void reconnect() {
     }
   }
 }
+```
 Purpose: Ensures the ESP32 stays connected to the MQTT broker.
 Functionality:
 Attempts to connect with a unique client ID.
 Retries every 5 seconds if the connection fails.
 Setup Function
-cpp
-Kopiera kod
+```cpp
+
 void setup() {
   Serial.begin(115200);
   
@@ -73,13 +75,14 @@ void setup() {
   // Attempt initial MQTT connection
   reconnect();
 }
+```
 Serial Communication: Initializes serial monitor for debugging.
 WiFi Connection: Connects to the specified WiFi network.
 DHT Sensor Initialization: Sets up the DHT11 sensor on the defined GPIO pin.
 MQTT Setup: Configures the MQTT broker details and attempts to connect.
 Loop Function
-cpp
-Kopiera kod
+```cpp
+
 void loop() {
   // Ensure MQTT connection
   if (!client.connected()) {
@@ -109,6 +112,7 @@ void loop() {
   // Wait for 5 seconds before next reading
   delay(5000);
 }
+```
 MQTT Connection Check: Verifies and maintains the MQTT connection.
 Sensor Data Acquisition: Reads temperature and humidity from the DHT11 sensor.
 Data Validation: Ensures the sensor readings are valid numbers.
@@ -116,8 +120,8 @@ JSON Formatting: Structures the sensor data into a JSON string.
 Data Transmission: Publishes the JSON payload to the specified MQTT topic.
 Delay: Waits for 5 seconds before taking the next reading.
 Complete Code
-cpp
-Kopiera kod
+```cpp
+
 #include <WiFi.h>
 #include <WiFiClient.h>
 #include <PubSubClient.h>
@@ -155,7 +159,7 @@ void reconnect() {
     }
   }
 }
-
+```
 void setup() {
   Serial.begin(115200);
   
