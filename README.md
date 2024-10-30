@@ -30,8 +30,8 @@ PubSubClient.h: Handles MQTT communication.
 DHTesp.h: Interfaces with the DHT11 sensor.
 Credentials and Settings: Replace placeholder values with your actual WiFi and MQTT broker details.
 MQTT Reconnection Function
-cpp
-```
+```cpp
+
 void reconnect() {
   while (!client.connected()) {
     Serial.print("Attempting MQTT connection...");
